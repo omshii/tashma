@@ -437,7 +437,7 @@ def test_lps_graph_construction():
     """
     print('-'*70)
     print("Running TEST: LPS Graph.")
-    print("WARNING: This test takes some amount of time -- possibly upto 10-15 minutes (due to checking expansion)")
+    print("WARNING: This test takes some amount of time -- possibly upto 10-15 minutes (due to computing expansion)")
 
     start_time = time.time()
     try:
@@ -446,18 +446,23 @@ def test_lps_graph_construction():
         G1 = lps1.get_graph()
         
         # Check basic properties
-        assert G1.is_regular(), "Graph should be regular"
-        assert G1.is_connected(), "Graph should be connected"
-        assert G1.degree()[0] == lps1.p + 1, f"Degree should be {lps1.p + 1}"
-        
+        assert G1.is_regular(), "LPS(p=5, q=13) should be regular"
+        assert G1.is_connected(), "LPS(p=5, q=13) should be connected"
+        assert G1.degree()[0] == lps1.p + 1, f"LPS(p=5, q=13) degree should be {lps1.p + 1}"
+        assert G1.order() == int((lps1.q - 1)*lps1.q*(lps1.q + 1)), f"LPS(p=5, q=13) order should be {int((lps1.q-1)*lps1.q*(lps1.q+1))}, instead got {G1.order()}"
+        assert LPSGraph.graph_is_ramanujan(G1), "LPS(p=5, q=13) should be Ramanujan"
+
         # Construct another LPS graph where (p|q) = -1
         lps2 = LPSGraph(p=13, q=29, silent=True)
         G2 = lps2.get_graph()
         
         # Check basic properties
-        assert G2.is_regular(), "Graph should be regular"
-        assert G2.is_connected(), "Graph should be connected"
-        assert G2.degree()[1] == lps2.p + 1, f"Degree should be {lps2.p + 1}"
+        assert G2.is_regular(), "LPS(p=13, q=29) should be regular"
+        assert G2.is_connected(), "LPS(p=13, q=29) should be connected"
+        assert G2.degree()[1] == lps2.p + 1, f"LPS(p=13, q=29) degree should be {lps2.p + 1}"
+        assert G2.order() == int(((lps2.q - 1)*lps2.q*(lps2.q + 1))/2), f"LPS(p=13, q=29) order should be {int(((lps2.q-1)*lps2.q*(lps2.q+1))/2)}, instead got {G2.order()}"
+        assert LPSGraph.graph_is_ramanujan(G2), "LPS(p=13, q=29) should be Ramanujan"
+
         end_time = time.time()
         print(f"✓ test_lps_graph_construction passed in {(end_time-start_time)} seconds")
         return True
@@ -606,11 +611,11 @@ def run_all_tests():
     print("=" * 70)
     
     tests = [
-        test_lps_graph_construction,
         test_parametric_initialization,
         test_normalized_PGL_matrix,
         test_compute_expansion,
         test_graph_is_ramanujan,
+        test_lps_graph_construction,
     ]
     
     results = [test() for test in tests]
