@@ -28,7 +28,7 @@ class LPSGraph:
         graph (Graph): SageMath Graph object representing the Cayley graph X(p, q).
     """
 
-    #Class attribute for maximum size of graph generated to prevent memory issues. 
+    # Class attribute for maximum size of graph generated to prevent memory issues.
     MAXIMUM_GRAPH_SIZE = 10**5 # Adjust based on system capabilities
 
     def __init__(self, beta: float = None, n: int = None, l: float = None,
@@ -116,7 +116,7 @@ class LPSGraph:
         self._log("Checking expansion...")
         self.is_ramanujan, self.expansion = LPSGraph.graph_is_ramanujan(self.graph)
         if not self.is_ramanujan:
-            self._log("Graph constructed but expansion does not satisfy Ramanujan bound. Expansion ", self.expansion, "is not less than ", ((2 * math.sqrt(p))/(p+1)))
+            self._log(f"Graph constructed but expansion does not satisfy Ramanujan bound. Expansion {self.expansion} is not less than {((2 * math.sqrt(self.p))/(self.p+1))}")
             raise ValueError("LPS graph could not be correctly constructed.")
         else:
             self._log(f"Constructed LPS Graph (p={self.p}, q={self.q}):")
@@ -129,7 +129,7 @@ class LPSGraph:
         """Internal helper to handle logging.
         
         Args:
-            message (str): Message to self._log.    
+            message (str): Message to log.    
         """
         if not self.silent:
             print(message)
@@ -243,7 +243,7 @@ class LPSGraph:
 
         # Verify correct number of generators
         if len(generators) != self.p + 1:
-            raise ValueError("Generator count mismatch: expected {}, got {}".format(self.p + 1, len(solutions)))
+            raise ValueError("Generator count mismatch: expected {}, got {}".format(self.p + 1, len(generators)))
 
         return generators
 
@@ -481,7 +481,7 @@ def test_parametric_initialization():
         bool: True if initialization succeeds, False otherwise.
     """
     print('-'*70)
-    print("Running TEST: parametric_initalization()")
+    print("Running TEST: parametric_initialization()")
     print('-'*70)
     start_time = time.time()
     try:
