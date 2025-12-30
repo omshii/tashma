@@ -1,0 +1,48 @@
+
+============================================================
+Bias Amplification Experiment Results
+Experiment completed in 39.19 seconds.
+============================================================
+Graph: 2184 vertices, expansion ratio = 0.7083
+Walk length: 1, Total walks: 13104
+Biased set size: 100000
+Subsample ratios: [0.5]
+============================================================
+
+Maximum Bias Amplification:
+  Full walk set:     0.427350
+  Subsample 0.50 (   114 walks): 0.684211
+
+Average Bias Amplification:
+  Full walk set:     0.137246
+  Subsample 0.50 (   114 walks): 0.162226
+
+Average Bias Differences (Subsample - Full):
+  Subsample 0.50 (   114 walks): 0.065700
+
+Theoretical bound (λ^0.5): 0.841598
+============================================================
+
+============================================================
+Bias Amplification Experiment Results
+Experiment completed in 1452.05 seconds.
+============================================================
+Graph: 2184 vertices, expansion ratio = 0.7083
+Walk length: 4, Total walks: 2830464
+Biased set size: 35000
+Subsample ratios: [0.5]
+============================================================
+
+Maximum Bias Amplification:
+  Full walk set:     0.217208
+  Subsample 0.50 (  1682 walks): 0.253270
+
+Average Bias Amplification:
+  Full walk set:     0.056435
+  Subsample 0.50 (  1682 walks): 0.060243
+
+Average Bias Differences (Subsample - Full):
+  Subsample 0.50 (  1682 walks): 0.017259
+
+Theoretical bound (λ^2.0): 0.501670
+============================================================

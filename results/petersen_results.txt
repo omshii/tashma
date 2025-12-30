@@ -1,0 +1,60 @@
+
+============================================================
+Bias Amplification Experiment Results
+Experiment completed in 2.74 seconds.
+============================================================
+Graph: 10 vertices, expansion ratio = 0.6667
+Walk length: 1, Total walks: 30
+Biased set size: 100000
+Subsample ratios: [0.75, 0.5, 0.25]
+============================================================
+
+Maximum Bias Amplification:
+  Full walk set:     0.600000
+  Subsample 0.75 (    12 walks): 0.833333
+  Subsample 0.50 (     5 walks): 1.000000
+  Subsample 0.25 (     2 walks): 1.000000
+
+Average Bias Amplification:
+  Full walk set:     0.217247
+  Subsample 0.75 (    12 walks): 0.262162
+  Subsample 0.50 (     5 walks): 0.438664
+  Subsample 0.25 (     2 walks): 0.533640
+
+Average Bias Differences (Subsample - Full):
+  Subsample 0.75 (    12 walks): 0.148464
+  Subsample 0.50 (     5 walks): 0.268641
+  Subsample 0.25 (     2 walks): 0.512401
+
+Theoretical bound (λ^0.5): 0.816497
+============================================================
+
+============================================================
+Bias Amplification Experiment Results
+Experiment completed in 0.31 seconds.
+============================================================
+Graph: 10 vertices, expansion ratio = 0.6667
+Walk length: 3, Total walks: 270
+Biased set size: 10000
+Subsample ratios: [0.75, 0.5, 0.25]
+============================================================
+
+Maximum Bias Amplification:
+  Full walk set:     0.288889
+  Subsample 0.75 (    66 walks): 0.424242
+  Subsample 0.50 (    16 walks): 0.750000
+  Subsample 0.25 (     4 walks): 1.000000
+
+Average Bias Amplification:
+  Full walk set:     0.130921
+  Subsample 0.75 (    66 walks): 0.139109
+  Subsample 0.50 (    16 walks): 0.261000
+  Subsample 0.25 (     4 walks): 0.372850
+
+Average Bias Differences (Subsample - Full):
+  Subsample 0.75 (    66 walks): 0.072383
+  Subsample 0.50 (    16 walks): 0.164314
+  Subsample 0.25 (     4 walks): 0.334475
+
+Theoretical bound (λ^1.5): 0.544331
+============================================================
