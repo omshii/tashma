@@ -577,15 +577,15 @@ def test_graph_is_ramanujan():
     start_time = time.time()
     try:
         petersen = graphs.PetersenGraph()
-        cycle_5 = graphs.CubeGraph(10)
+        cube_10 = graphs.CubeGraph(10)
 
         # Test Petersen graph (should be Ramanujan)
         petersen_is_ram, petersen_exp = LPSGraph.graph_is_ramanujan(petersen)
         assert petersen_is_ram, "Petersen graph should be Ramanujan."
 
         # Test degree 10 hypercube graph (should not be Ramanujan)
-        cycle_is_ram, cycle_exp = LPSGraph.graph_is_ramanujan(cycle_5)
-        assert not cycle_is_ram, "Degree 10 hypercube graph should not be Ramanujan."
+        cube_is_ram, cube_exp = LPSGraph.graph_is_ramanujan(cube_10)
+        assert not cube_is_ram, "Degree 10 hypercube graph should not be Ramanujan."
 
         end_time = time.time()
         print(f"✓ test_graph_is_ramanujan passed in {(end_time-start_time)} seconds")
